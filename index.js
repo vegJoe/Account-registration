@@ -38,6 +38,7 @@ passwordListener.addEventListener("input", (event) => {
         confirmPasswordListener.disabled = true;
         passwordListener.classList.add("password-red");
         passwordListener.classList.remove("password-green")
+        confirmPasswordListener.classList.remove("password-green");
     }   
 });
 
