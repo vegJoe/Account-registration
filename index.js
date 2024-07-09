@@ -23,7 +23,7 @@ passwordListener.addEventListener("input", (event) => {
     if(validatePassword(passwordListener.value)) {
         passwordLength = true;
         passwordListener.classList.add("password-green");
-        passwordListener.classList.remove("password-red")
+        passwordListener.classList.remove("password-red");
         if(!confirmPasswordListener.value === "")
             document.querySelector(".btn").disabled = false;
         else {
@@ -46,13 +46,13 @@ confirmPasswordListener.addEventListener("input", (event) => {
         passwordValid = true;
         document.querySelector(".btn").disabled = false;
         confirmPasswordListener.classList.add("password-green");
-        confirmPasswordListener.classList.remove("password-red")
+        confirmPasswordListener.classList.remove("password-red");
     }  
     else {
         passwordValid = false;
         document.querySelector(".btn").disabled = true;
         confirmPasswordListener.classList.add("password-red");
-        confirmPasswordListener.classList.remove("password-green")
+        confirmPasswordListener.classList.remove("password-green");
     }
 });
 
