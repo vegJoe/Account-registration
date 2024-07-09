@@ -1,0 +1,40 @@
+* {
+    padding: 4px;
+}
+
+main {
+    justify-content: center;
+    border: 10px;
+    display: flex;
+}
+
+fieldset {
+    padding: 1rem;
+    background-color: bisque;
+}
+
+legend {
+    font-size: 30px;
+}
+
+.inputForm {
+    width: 13rem;
+    flex-direction: column;
+    background-color: bisque;
+    display: flex;
+}
+
+.btn {
+    width: 3.4rem;
+    margin-top: 1rem;
+    display: flex;
+}
+
+.password-green {
+    border-color: rgb(96, 160, 0);
+}
+
+.password-red {
+    border-color: red;
+}
+
