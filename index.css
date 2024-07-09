@@ -32,11 +32,15 @@ legend {
 
 .password-green {
     border-color: green !important;
-    color: green;
 }
 
 .password-red {
     border-color: red !important;
-    color: red;
+}
+
+input {
+    border: 2px solid #ccc;
+
+    outline: none;
 }
 
