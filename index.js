@@ -17,17 +17,18 @@ for (i = 0; i < inputs.length; i++) {
         inputs.forEach( v => values.push(v.value))
         btn.disabled = values.includes("")
     })
-}
+};
 
 passwordListener.addEventListener("input", (event) => {
     if(validatePassword(passwordListener.value)) {
         passwordLength = true;
+        passwordListener.classList.add("password-green");
+        passwordListener.classList.remove("password-red")
         if(!confirmPasswordListener.value === "")
             document.querySelector(".btn").disabled = false;
         else {
             document.querySelector(".btn").disabled = true;
         }
-
         confirmPasswordListener.disabled = false;
     }
     else {
@@ -35,19 +36,25 @@ passwordListener.addEventListener("input", (event) => {
         confirmPasswordListener.value = "";
         document.querySelector(".btn").disabled = true;
         confirmPasswordListener.disabled = true;
+        passwordListener.classList.add("password-red");
+        passwordListener.classList.remove("password-green")
     }   
-})
+});
 
 confirmPasswordListener.addEventListener("input", (event) => {
     if(confirmPasswordListener.value === passwordListener.value) {
         passwordValid = true;
         document.querySelector(".btn").disabled = false;
+        confirmPasswordListener.classList.add("password-green");
+        confirmPasswordListener.classList.remove("password-red")
     }  
     else {
         passwordValid = false;
         document.querySelector(".btn").disabled = true;
+        confirmPasswordListener.classList.add("password-red");
+        confirmPasswordListener.classList.remove("password-green")
     }
-})
+});
 
 btnClick.addEventListener("mouseover", (event) => {
     const name = inputForm.querySelector("#name");
@@ -63,7 +70,7 @@ btnClick.addEventListener("mouseover", (event) => {
     else if(confirmPasswordListener.value !== passwordListener.value) {
         window.alert("Password does not match");
     }
-})
+});
 
 inputForm.addEventListener("submit", (event) => {event.preventDefault();
 
@@ -87,8 +94,10 @@ inputForm.addEventListener("submit", (event) => {event.preventDefault();
         email: emailValue,
         password: passwordValue
     }
-
+    
     console.log(user);
+
+    window.location.reload();
 });
 
 function validatePassword(password) {
